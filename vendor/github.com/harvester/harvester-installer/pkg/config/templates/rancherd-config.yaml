@@ -1,0 +1,10 @@
+{{if .ServerURL -}}
+server: {{ .ServerURL }}
+role: agent
+{{- else -}}
+role: cluster-init
+{{- end }}
+token: '{{ .Token }}'
+kubernetesVersion: {{ .RuntimeVersion }}
+labels:
+ - harvesterhci.io/managed=true
